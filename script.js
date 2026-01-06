@@ -117,7 +117,13 @@ async function loadServerProducts() {
     apiGrid.innerHTML = "<p>Loading from server...</p>";
 
     const response = await axios.get(
-      "http://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl&product_type=lipstick"
+      "https://makeup-api.herokuapp.com/api/v1/products.json",
+      {
+        params: {
+          brand: "covergirl",
+          product_type: "lipstick"
+        }
+      }
     );
 
     const products = response.data
@@ -143,7 +149,6 @@ async function loadServerProducts() {
     console.error("Server error:", error);
     apiGrid.textContent = "Failed to load server data.";
   }
-  
 }
 
 loadServerProducts();
