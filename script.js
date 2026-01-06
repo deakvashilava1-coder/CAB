@@ -79,10 +79,11 @@ form.addEventListener("submit", (e) => {
   }
 
   // Confirm password
-  if (password.value !== confirmPassword.value) {
-    showError(confirmPassword, "Passwords do not match");
-    isValid = false;
+  function showError(input, message) {
+    const error = input.closest(".form-group").querySelector(".error-msg");
+    error.textContent = message;
   }
+  
 
   if (isValid) {
     successMsg.textContent = "Registration successful!";
