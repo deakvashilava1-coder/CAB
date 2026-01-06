@@ -11,12 +11,49 @@
 </head>
 
 <body>
+  <!-- button -->
   <button id="scrollTopBtn">↑</button>
+  <!-- top bar -->
   <header class="top-bar">
     <nav class="auth">
       <a href="#" id="signUpLink">Sign Up</a>
       <a href="#">Log In</a>
     </nav>
+  <!-- registrationForm -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Register</h2>
+        <form id="registrationForm" novalidate>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+            <small class="error-msg"></small>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <small class="error-msg"></small>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+              <input type="password" id="password" name="password" required>
+              <button type="button" id="togglePassword">Show</button>
+            </div>
+            <small class="error-msg"></small>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <small class="error-msg"></small>
+          </div>
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+        <p id="successMsg" style="color:green;"></p>
+      </div>
+    </div>
+    <!-- burger -->
     <div class="burger" id="burger">
       <span></span>
       <span></span>
@@ -27,23 +64,28 @@
       <a href="#trendy-budgeting">trendy & budgeting</a>
       <a href="#must">the "must be"s</a>
     </nav> 
+<!-- main -->
   </header>
   <section class="hero">
     <img src="./images/background.png" alt="Background" class="hero-bg">
     <div class="hero-content">
+      <!-- main sityvebi -->
     <div id="text-container" ></div>
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="./images/ab69fe3db6ba4285ab34fc36dd467ce5.mov"type="video/mp4">
     </video>
   </div>
   </section>
-  <h2 id="one-of-a-kind" class="subheading">one of the kinds</h2>
+<!-- section 1 -->
   <section class="collections-section">
+    <h2 id="one-of-a-kind" class="subheading">one of the kinds</h2>
+
     <div class="collections-grid" id="collections-grid">
     </div>
   </section>
+  <!-- section 2 -->
   <section class="new-arrivals">
-    <h2 class="new-arrivals-title">trendy & budgeting</h2>
+    <h2 class="new-arrivals-title" id="trendy-budgeting">trendy & budgeting</h2>
     <div class="arrivals-grid">
       <div class="arrival-item">
         <img src="https://george-gina-lucy.com/cdn/shop/files/20251128_GGL_BAG_01_CAPTURE_0483_720x.jpg?v=1765914677">
@@ -62,11 +104,13 @@
       </div>
     </div>
   </section>
+  <!-- section 3 -->
   <section class="api-section" id="must">
     <h2 class="api-title">must be in bags</h2>
     <div class="api-grid" id="api-grid">
     </div>
   </section>
+  <!-- cookies -->
 <div id="cookie-banner" class="cookie-banner">
   <p>
     We use cookies to improve your experience and analyze site traffic.
@@ -77,40 +121,9 @@
     <button id="declineCookies">Decline</button>
   </div>
 </div>
-<div id="registerModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Register</h2>
-    <form id="registrationForm" novalidate>
-      <div class="form-group">
-        <label for="fullName">Full Name</label>
-        <input type="text" id="fullName" name="fullName" required>
-        <small class="error-msg"></small>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        <small class="error-msg"></small>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <div class="password-wrapper">
-          <input type="password" id="password" name="password" required>
-          <button type="button" id="togglePassword">Show</button>
-        </div>
-        <small class="error-msg"></small>
-      </div>
-      <div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
-        <small class="error-msg"></small>
-      </div>
-      <button type="submit" class="submit-btn">Register</button>
-    </form>
-    <p id="successMsg" style="color:green;"></p>
-  </div>
-</div>
   <script src="./script.js"></script>
+
+  <!-- footer -->
   <footer class="site-footer">
     <div class="footer-divider"></div>
     <div class="footer-grid">

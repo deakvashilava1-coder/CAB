@@ -1,3 +1,64 @@
+// button
+const scrollBtn = document.getElementById("scrollTopBtn");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+//  regisstration
+const modal = document.getElementById("registerModal");
+const signUpLink = document.getElementById("signUpLink");
+const closeBtn = modal.querySelector(".close");
+
+signUpLink.addEventListener("click", e => {
+  e.preventDefault();
+  modal.classList.add("show");
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("show");
+});
+
+window.addEventListener("click", e => {
+  if (e.target === modal) {
+    modal.classList.remove("show");
+  }
+});
+
+const togglePassword = document.getElementById("togglePassword");
+const passwordInput = document.getElementById("password");
+
+togglePassword.addEventListener("click", () => {
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    togglePassword.textContent = "Hide";
+  } else {
+    passwordInput.type = "password";
+    togglePassword.textContent = "Show";
+  }
+});
+// burger
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+burger.addEventListener("click", () => {
+  mobileMenu.classList.toggle("show");
+});
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("show");
+  });
+});
+// main sityvebi
 const container = document.getElementById("text-container");
 const words = ["be", "unique", "iconic", "chic", "gorgeous", "glamorous"];
 const finalPhrase = "with CAB";
@@ -31,21 +92,7 @@ function animateWords() {
 }
 animateWords();
 
-const scrollBtn = document.getElementById("scrollTopBtn");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollBtn.style.display = "block";
-  } else {
-    scrollBtn.style.display = "none";
-  }
-});
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-
+// section 1
 const collections = [
     { id: 1, name: "Prada", description: "Prada Grommet Black Canapa Tote Bag", image: "https://virtualiconvintage.com/cdn/shop/files/17.png?v=1743641841&width=823" },
     { id: 2, name: "Balenciaga", description: "Le City Bag Medium in Black", image: "https://balenciaga.dam.kering.com/m/31535bdf893d024/Large-8230582AA9S1000_F.jpg?v=2" },
@@ -78,38 +125,8 @@ const collections = [
     item.appendChild(desc);
     grid.appendChild(item);
   });
-  const burger = document.getElementById("burger");
-const mobileMenu = document.getElementById("mobileMenu");
 
-burger.addEventListener("click", () => {
-  mobileMenu.classList.toggle("show");
-});
-
-document.querySelectorAll(".mobile-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.remove("show");
-  });
-});
-
-const cookieBanner = document.getElementById("cookie-banner");
-const acceptCookies = document.getElementById("acceptCookies");
-const declineCookies = document.getElementById("declineCookies");
-
-if (localStorage.getItem("cookieConsent")) {
-  cookieBanner.style.display = "none";
-}
-
-acceptCookies.addEventListener("click", () => {
-  localStorage.setItem("cookieConsent", "accepted");
-  cookieBanner.style.display = "none";
-});
-
-declineCookies.addEventListener("click", () => {
-  localStorage.setItem("cookieConsent", "declined");
-  cookieBanner.style.display = "none";
-});
-
-
+  // section 3
 const apiGrid = document.getElementById("api-grid");
 
 async function loadServerProducts() {
@@ -153,34 +170,23 @@ async function loadServerProducts() {
 
 loadServerProducts();
 
-const modal = document.getElementById("registerModal");
-const signUpLink = document.getElementById("signUpLink");
-const closeBtn = modal.querySelector(".close");
+// cookies
+const cookieBanner = document.getElementById("cookie-banner");
+const acceptCookies = document.getElementById("acceptCookies");
+const declineCookies = document.getElementById("declineCookies");
 
-signUpLink.addEventListener("click", e => {
-  e.preventDefault();
-  modal.classList.add("show");
+if (localStorage.getItem("cookieConsent")) {
+  cookieBanner.style.display = "none";
+}
+
+acceptCookies.addEventListener("click", () => {
+  localStorage.setItem("cookieConsent", "accepted");
+  cookieBanner.style.display = "none";
 });
 
-closeBtn.addEventListener("click", () => {
-  modal.classList.remove("show");
+declineCookies.addEventListener("click", () => {
+  localStorage.setItem("cookieConsent", "declined");
+  cookieBanner.style.display = "none";
 });
 
-window.addEventListener("click", e => {
-  if (e.target === modal) {
-    modal.classList.remove("show");
-  }
-});
 
-const togglePassword = document.getElementById("togglePassword");
-const passwordInput = document.getElementById("password");
-
-togglePassword.addEventListener("click", () => {
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    togglePassword.textContent = "Hide";
-  } else {
-    passwordInput.type = "password";
-    togglePassword.textContent = "Show";
-  }
-});
