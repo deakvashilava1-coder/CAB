@@ -36,6 +36,65 @@ window.addEventListener("click", e => {
 const togglePassword = document.getElementById("togglePassword");
 const passwordInput = document.getElementById("password");
 
+// form validation
+const form = document.getElementById("registrationForm");
+const fullName = document.getElementById("fullName");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirmPassword");
+const successMsg = document.getElementById("successMsg");
+
+// regex
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
+// მინიმუმ 6 სიმბოლო, 1 დიდი ასო, 1 ციფრი
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let isValid = true;
+
+  // clear messages
+  document.querySelectorAll(".error-msg").forEach(msg => msg.textContent = "");
+  successMsg.textContent = "";
+
+  // Full Name
+  if (fullName.value.trim() === "") {
+    showError(fullName, "Full name is required");
+    isValid = false;
+  }
+
+  // Email
+  if (!emailRegex.test(email.value)) {
+    showError(email, "Enter a valid email address");
+    isValid = false;
+  }
+
+  // Password
+  if (!passwordRegex.test(password.value)) {
+    showError(
+      password,
+      "Password must be at least 6 chars, include 1 uppercase and 1 number"
+    );
+    isValid = false;
+  }
+
+  // Confirm password
+  if (password.value !== confirmPassword.value) {
+    showError(confirmPassword, "Passwords do not match");
+    isValid = false;
+  }
+
+  if (isValid) {
+    successMsg.textContent = "Registration successful!";
+    form.reset();
+  }
+});
+
+function showError(input, message) {
+  const error = input.parentElement.querySelector(".error-msg");
+  error.textContent = message;
+}
+
 togglePassword.addEventListener("click", () => {
   if (passwordInput.type === "password") {
     passwordInput.type = "text";
