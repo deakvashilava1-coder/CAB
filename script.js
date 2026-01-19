@@ -41,7 +41,7 @@ const form = document.getElementById("registrationForm");
 const fullName = document.getElementById("fullName");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
-const confirmPassword = document.getElementById("confirmPassword");
+// const confirmPassword = document.getElementById("confirmPassword");
 const successMsg = document.getElementById("successMsg");
 
 // regex
@@ -91,10 +91,10 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-function showError(input, message) {
-  const error = input.parentElement.querySelector(".error-msg");
-  error.textContent = message;
-}
+// function showError(input, message) {
+//   const error = input.parentElement.querySelector(".error-msg");
+//   error.textContent = message;
+// }
 
 togglePassword.addEventListener("click", () => {
   if (passwordInput.type === "password") {
@@ -154,22 +154,55 @@ animateWords();
 
 // section 1
 const collections = [
-    { id: 1, name: "Prada", description: "Prada Grommet Black Canapa Tote Bag", image: "https://virtualiconvintage.com/cdn/shop/files/17.png?v=1743641841&width=823" },
-    { id: 2, name: "Balenciaga", description: "Le City Bag Medium in Black", image: "https://balenciaga.dam.kering.com/m/31535bdf893d024/Large-8230582AA9S1000_F.jpg?v=2" },
-    { id: 3, name: "Vivienne Westwood", description: "small black bag", image: "https://i.pinimg.com/736x/99/12/b3/9912b3cc95c3ec986084008d47a95239.jpg" },
+    { id: 1, name: "Prada", description: "Prada Grommet Black Canapa Tote Bag", image: "https://virtualiconvintage.com/cdn/shop/files/17.png?v=1743641841&width=823", link: "https://virtualiconvintage.com/products/prada-grommet-black-canapa-tote-bag"},
+    { id: 2, name: "Balenciaga", description: "Le City Bag Medium in Black", image: "https://balenciaga.dam.kering.com/m/31535bdf893d024/Large-8230582AA9S1000_F.jpg?v=2", link:"https://www.balenciaga.com/en-us/le-city-bag-medium-black-8230582AA9S1000.html" },
+    { id: 3, name: "Vivienne Westwood", description: "small black bag", image: "https://i.pinimg.com/736x/99/12/b3/9912b3cc95c3ec986084008d47a95239.jpg",link:"https://poshmark.com/listing/Vivienne-Westwood-Orb-Boston-Tote-Bag-64f2f361f644e5ce126d2948"},
   ];
   
-  const grid = document.getElementById("collections-grid");
+  // const grid = document.getElementById("collections-grid");
   
+  // collections.forEach(collection => {
+  //   const item = document.createElement("div");
+  //   item.className = "collection-item";
+  
+  //   const imgContainer = document.createElement("div");
+  //   imgContainer.className = "collection-image-container";
+  //   const img = document.createElement("img");
+  //   img.src = collection.image;
+  //   img.alt = collection.name;
+  //   imgContainer.appendChild(img);
+  
+  //   const title = document.createElement("h3");
+  //   title.className = "collection-title";
+  //   title.textContent = collection.name;
+  
+  //   const desc = document.createElement("p");
+  //   desc.className = "collection-description";
+  //   desc.textContent = collection.description;
+  
+  //   item.appendChild(imgContainer);
+  //   item.appendChild(title);
+  //   item.appendChild(desc);
+  //   grid.appendChild(item);
+  // });
+  const grid = document.getElementById("collections-grid");
+
   collections.forEach(collection => {
     const item = document.createElement("div");
     item.className = "collection-item";
   
+    const link = document.createElement("a");
+    link.href = collection.link;
+    link.target = "_blank";
+    link.className = "collection-link";
+  
     const imgContainer = document.createElement("div");
     imgContainer.className = "collection-image-container";
+  
     const img = document.createElement("img");
     img.src = collection.image;
     img.alt = collection.name;
+  
     imgContainer.appendChild(img);
   
     const title = document.createElement("h3");
@@ -180,12 +213,14 @@ const collections = [
     desc.className = "collection-description";
     desc.textContent = collection.description;
   
-    item.appendChild(imgContainer);
-    item.appendChild(title);
-    item.appendChild(desc);
+    link.appendChild(imgContainer);
+    link.appendChild(title);
+    link.appendChild(desc);
+  
+    item.appendChild(link);
     grid.appendChild(item);
   });
-
+  
   // section 3
 const apiGrid = document.getElementById("api-grid");
 
@@ -229,6 +264,14 @@ async function loadServerProducts() {
 }
 
 loadServerProducts();
+const mobileSignUp = document.getElementById("mobileSignUp");
+
+mobileSignUp.addEventListener("click", e => {
+  e.preventDefault();
+  mobileMenu.classList.remove("show"); // close burger
+  modal.classList.add("show");          // open register modal
+});
+
 
 // cookies
 const cookieBanner = document.getElementById("cookie-banner");

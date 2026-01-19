@@ -176,15 +176,23 @@
   margin-top: 2px;
 }
 
-.success-msg {
+/* .success-msg {
   text-align: center;
   font-size: 14px;
   color: green;
   margin-top: 10px;
-}
+} */
 
 
   /* burger */
+  .mobile-auth {
+    margin-top: 30px;
+    padding: 12px 28px;
+    border: 1px solid #000;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
   .burger {
     display: none;
     flex-direction: column;
