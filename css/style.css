@@ -38,7 +38,7 @@
   .auth a {
     padding: 8px 18px;
     border: 1px solid #000;
-    border-radius: 999px; /* pill shape */
+    border-radius: 999px; 
     font-size: 14px;
     letter-spacing: 2px;
     text-decoration: none;
@@ -208,13 +208,6 @@
   margin-top: 2px;
 }
 
-/* .success-msg {
-  text-align: center;
-  font-size: 14px;
-  color: green;
-  margin-top: 10px;
-} */
-
 
   /* burger */
   .mobile-auth {
@@ -295,7 +288,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100svh;   /* iOS-safe viewport */
+    min-height: 100svh; 
     overflow: visible;
   }
   

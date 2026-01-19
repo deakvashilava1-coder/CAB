@@ -47,7 +47,6 @@ const successMsg = document.getElementById("successMsg");
 // regex
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
-// მინიმუმ 6 სიმბოლო, 1 დიდი ასო, 1 ციფრი
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -91,10 +90,6 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-// function showError(input, message) {
-//   const error = input.parentElement.querySelector(".error-msg");
-//   error.textContent = message;
-// }
 
 togglePassword.addEventListener("click", () => {
   if (passwordInput.type === "password") {
@@ -158,33 +153,6 @@ const collections = [
     { id: 2, name: "Balenciaga", description: "Le City Bag Medium in Black", image: "https://balenciaga.dam.kering.com/m/31535bdf893d024/Large-8230582AA9S1000_F.jpg?v=2", link:"https://www.balenciaga.com/en-us/le-city-bag-medium-black-8230582AA9S1000.html" },
     { id: 3, name: "Vivienne Westwood", description: "small black bag", image: "https://i.pinimg.com/736x/99/12/b3/9912b3cc95c3ec986084008d47a95239.jpg",link:"https://poshmark.com/listing/Vivienne-Westwood-Orb-Boston-Tote-Bag-64f2f361f644e5ce126d2948"},
   ];
-  
-  // const grid = document.getElementById("collections-grid");
-  
-  // collections.forEach(collection => {
-  //   const item = document.createElement("div");
-  //   item.className = "collection-item";
-  
-  //   const imgContainer = document.createElement("div");
-  //   imgContainer.className = "collection-image-container";
-  //   const img = document.createElement("img");
-  //   img.src = collection.image;
-  //   img.alt = collection.name;
-  //   imgContainer.appendChild(img);
-  
-  //   const title = document.createElement("h3");
-  //   title.className = "collection-title";
-  //   title.textContent = collection.name;
-  
-  //   const desc = document.createElement("p");
-  //   desc.className = "collection-description";
-  //   desc.textContent = collection.description;
-  
-  //   item.appendChild(imgContainer);
-  //   item.appendChild(title);
-  //   item.appendChild(desc);
-  //   grid.appendChild(item);
-  // });
   const grid = document.getElementById("collections-grid");
 
   collections.forEach(collection => {
@@ -268,8 +236,8 @@ const mobileSignUp = document.getElementById("mobileSignUp");
 
 mobileSignUp.addEventListener("click", e => {
   e.preventDefault();
-  mobileMenu.classList.remove("show"); // close burger
-  modal.classList.add("show");          // open register modal
+  mobileMenu.classList.remove("show");
+  modal.classList.add("show");      
 });
 
 
