@@ -29,6 +29,34 @@
     transform: scale(1.1);
   }
   /* top bar */
+  .auth {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .auth a {
+    padding: 8px 18px;
+    border: 1px solid #000;
+    border-radius: 999px; /* pill shape */
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #000;
+    font-style: italic;
+    transition: all 0.3s ease;
+  }
+  
+  .auth a:hover {
+    background: #000;
+    color: #fff;
+  }
+  
+  
+  .auth .stay {
+    margin-left: 10px;
+  }
+  
   .top-bar {
     position: fixed; 
     top: 30px;
