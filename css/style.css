@@ -5,6 +5,10 @@
     font-family: 'New Rocker', system-ui;
     background: #fff;
   }
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   /* button */
   #scrollTopBtn {
     position: fixed;
@@ -263,8 +267,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
+    min-height: 100svh;   /* iOS-safe viewport */
+    overflow: visible;
   }
   
   .hero-content {
