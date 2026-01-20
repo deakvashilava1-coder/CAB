@@ -39,12 +39,13 @@
     padding: 8px 18px;
     border: 1px solid #000;
     border-radius: 999px; 
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 2px;
     text-decoration: none;
     color: #000;
     font-style: italic;
     transition: all 0.3s ease;
+    margin-left: 20px;
   }
   
   .auth a:hover {
@@ -65,13 +66,13 @@
     font-family: 'New Rocker', system-ui;
   }
   
-  .auth a {
+  /* .auth a {
     margin-left: 20px;
     text-decoration: none;
     font-size: 18px;
     color: #000000;
     font-style: italic;
-  }
+  } */
   /* registracia */
 .modal {
   display: none;              

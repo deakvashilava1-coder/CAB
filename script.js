@@ -152,6 +152,11 @@ const collections = [
     { id: 1, name: "Prada", description: "Prada Grommet Black Canapa Tote Bag", image: "https://virtualiconvintage.com/cdn/shop/files/17.png?v=1743641841&width=823", link: "https://virtualiconvintage.com/products/prada-grommet-black-canapa-tote-bag"},
     { id: 2, name: "Balenciaga", description: "Le City Bag Medium in Black", image: "https://balenciaga.dam.kering.com/m/31535bdf893d024/Large-8230582AA9S1000_F.jpg?v=2", link:"https://www.balenciaga.com/en-us/le-city-bag-medium-black-8230582AA9S1000.html" },
     { id: 3, name: "Vivienne Westwood", description: "small black bag", image: "https://i.pinimg.com/736x/99/12/b3/9912b3cc95c3ec986084008d47a95239.jpg",link:"https://poshmark.com/listing/Vivienne-Westwood-Orb-Boston-Tote-Bag-64f2f361f644e5ce126d2948"},
+    { id: 4, name: "DSQUARED2", description: "eyelet studded shoulder bag", image: "https://cdn-images.farfetch-contents.com/27/24/44/66/27244466_62122994_1000.jpg", link:"https://www.farfetch.com/ge/shopping/women/dsquared2-eyelet-studded-shoulder-bag-item-27244466.aspx?storeid=17282" },
+    { id: 5, name: "Valentino Garavani", description: "Rockstud padded leather handbag", image: "https://cdn-images.farfetch-contents.com/20/87/62/32/20876232_51362487_2048.jpg",link:"https://www.farfetch.com/ge/shopping/women/valentino-garavani-rockstud-padded-leather-handbag-item-20876232.aspx?storeid=16716"},
+    { id: 6, name: "The Attico", description: "medium La Passeggiata tote bag", image: "https://cdn-images.farfetch-contents.com/25/61/24/89/25612489_57723269_1000.jpg" , link:"https://www.farfetch.com/ge/shopping/women/the-attico-medium-la-passeggiata-tote-bag-item-25612489.aspx?storeid=9885" },
+
+
   ];
   const grid = document.getElementById("collections-grid");
 
